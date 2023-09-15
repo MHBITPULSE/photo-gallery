@@ -48,7 +48,6 @@ const PhotoDetails = () => {
             }
             await axios.post("https://photo-gallery-7dab5-default-rtdb.firebaseio.com/photos/" + params.photoId + "/comments.json?", comment)
                   .then(response => {
-                        console.log(response)
                         setcomment("")
                         fetchPhoto()
                   })
@@ -79,9 +78,7 @@ const PhotoDetails = () => {
                                                       {photo.title}
                                                 </CardTitle>
                                                 <CardSubtitle className='p-2'>Category : {photo.category}</CardSubtitle>
-                                                <Button color="primary" outline size="sm" className='p-2' onClick={() => navigate(`/photo/${photo[0]}`)}>
-                                                      Details
-                                                </Button>
+
                                           </CardBody>
                                     </Card>
                               </div>
@@ -112,7 +109,7 @@ const PhotoDetails = () => {
                                           </Form>
                                     </div>
                               </div>
-                              <h4>Feedbacks</h4>
+                              <h4 className='p-2 text-center'>Feedbacks</h4>
                               <div>
                                     {
                                           comments.length > 0 ? comments.map((item, index) => <Comment key={index} comment={item} />)

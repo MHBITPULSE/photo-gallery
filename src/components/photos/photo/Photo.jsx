@@ -5,7 +5,6 @@ import { Card, CardBody, CardSubtitle, CardText, CardTitle, Button } from 'react
 import ModeCommentOutlinedIcon from '@mui/icons-material/ModeCommentOutlined';
 
 const Photo = ({ photo }) => {
-    console.log(photo)
     const navigate = useNavigate();
     return (
         <div className='p-2 rounded shadow bg-info-subtle align-self-center'>

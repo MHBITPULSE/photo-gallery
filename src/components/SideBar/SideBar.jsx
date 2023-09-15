@@ -20,6 +20,7 @@ const SideBar = () => {
       return (
             <div className='sticky top-32 z-50'>
                   <ListGroup>
+                        <h6 className='text-center'>Categories</h6>
                         {categoryList}
                   </ListGroup>
             </div>

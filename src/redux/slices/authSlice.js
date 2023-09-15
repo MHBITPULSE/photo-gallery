@@ -48,7 +48,6 @@ export const auth = (isSignIn, values) => async (dispatch) => {
 
       await axios.post(url, user)
             .then(async (response) => {
-                  console.log(response)
                   if (!isSignIn) {
                         const userUpdate = {
                               idToken: response.data.idToken,
@@ -57,7 +56,6 @@ export const auth = (isSignIn, values) => async (dispatch) => {
                         }
                         await axios.post("https://identitytoolkit.googleapis.com/v1/accounts:update?key=" + API_KEY, userUpdate)
                               .then(res => {
-                                    console.log(res)
                                     localStorage.setItem('userName', res.data.displayName)
                                     localStorage.setItem('token', res.data.idToken)
                                     localStorage.setItem('userId', res.data.localId)

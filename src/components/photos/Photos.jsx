@@ -11,7 +11,6 @@ const Photos = () => {
     const dispatch = useDispatch();
     const photos = useSelector(selectPhotos);
     const isLoading = useSelector(selectPhotoLoading);
-    console.log(photos)
     //const [photos, setPhotos] = useState([])
     // const loadPhotos = async () => {
     //     await axios.get("https://photo-gallery-7dab5-default-rtdb.firebaseio.com/photos.json")
@@ -20,7 +19,6 @@ const Photos = () => {
     // }
 
     const params = useParams();
-    console.log(photos)
 
     useEffect(() => {
         let category = params.hasOwnProperty('category') ? params.category.charAt(0).toUpperCase() +

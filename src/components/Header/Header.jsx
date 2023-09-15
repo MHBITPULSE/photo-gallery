@@ -9,8 +9,11 @@ import {
 
 import { selectToken, selectUserName, logout } from '../../redux/slices/authSlice'
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
+
+      const navigate = useNavigate()
 
       const dispatch = useDispatch()
 
@@ -19,21 +22,18 @@ const Header = () => {
 
       let navItem = null;
       if (token === null) {
-            navItem = (<NavItem>
-                  <NavLink href="/login">
+            navItem = (
+                  <NavItem className='mr-10 font-semibold text-xl text-rose-500 cursor-pointer' onClick={() => navigate('/login')} >
                         Login
-                  </NavLink>
-            </NavItem>)
+                  </NavItem >)
       } else {
             navItem = (
                   <>
-                        <NavItem>
-                              <NavLink href="#">Hello, {userName}!</NavLink>
+                        <NavItem className='font-semibold text-xl text-rose-500'>
+                              Hello, {userName}!
                         </NavItem>
-                        <NavItem>
-                              <NavLink className='cursor-pointer' onClick={() => dispatch(logout())}>
-                                    Logout
-                              </NavLink>
+                        <NavItem className='mr-10 font-semibold text-xl text-rose-500 cursor-pointer' onClick={() => dispatch(logout())}>
+                              Logout
                         </NavItem>
                   </>)
       }
@@ -45,9 +45,9 @@ const Header = () => {
                   </div>
                   <div className='w-full bg-stone-200'>
                         <Navbar className="w-full">
-                              <Nav className="me-auto w-full flex gap-5 justify-between">
-                                    <NavItem>
-                                          <NavLink href="/">Home</NavLink>
+                              <Nav className="ml-10 me-auto w-full flex flex-row sm:flex-col gap-5 justify-between">
+                                    <NavItem className='font-semibold text-xl text-rose-500 cursor-pointer' onClick={() => navigate('/')}>
+                                          Home
                                     </NavItem>
                                     {navItem}
                               </Nav>
