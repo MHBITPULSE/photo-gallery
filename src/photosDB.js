@@ -122,10 +122,10 @@ export const PHOTOS = [
     },
 ];
 
-export const categories = {
-    flower: "Flower",
-    animal: "Animal",
-    nature: "Nature",
-    food: "Food",
-    bird: "Bird"
-}
+export const CATEGORIES = [
+    "Flower",
+    "Animal",
+    "Nature",
+    "Food",
+    "Bird"
+]
